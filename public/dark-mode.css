@@ -1,0 +1,83 @@
+[data-theme="dark"] {
+    --primary-color: #3AAEA9;
+    --secondary-color: #2A9D8F;
+    --background-color: #111827;
+    --text-color: #f3f4f6;
+    --card-bg: #1f2937;
+}
+
+/* Global Dark Mode Adjustments */
+[data-theme="dark"] body {
+    @apply bg-gray-900 text-gray-100;
+}
+
+[data-theme="dark"] .card {
+    @apply bg-gray-800 border border-gray-700;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Surah Info Styling */
+[data-theme="dark"] .surah-info {
+    @apply bg-emerald-900/20 border-emerald-600;
+    border-left: 4px solid var(--secondary-color);
+}
+
+[data-theme="dark"] .surah-info h2 {
+    @apply text-emerald-300;
+    border-bottom: 2px solid rgba(42, 157, 143, 0.4);
+}
+
+[data-theme="dark"] .surah-info p::before {
+    @apply text-emerald-400;
+}
+
+/* Audio Player Customization */
+[data-theme="dark"] .audio-player {
+    @apply bg-gray-700 shadow-xl;
+    filter: none;
+}
+
+[data-theme="dark"] audio::-webkit-media-controls-panel {
+    @apply bg-gray-700;
+}
+
+[data-theme="dark"] audio::-webkit-media-controls-play-button {
+    @apply bg-emerald-500 hover:bg-emerald-600;
+}
+
+[data-theme="dark"] audio::-webkit-media-controls-timeline {
+    @apply bg-gray-600;
+}
+
+[data-theme="dark"] audio::-webkit-media-controls-timeline-progress-bar {
+    @apply bg-emerald-500;
+}
+
+[data-theme="dark"] audio::-webkit-media-controls-volume-slider {
+    @apply bg-gray-600;
+}
+
+[data-theme="dark"] audio::-webkit-media-controls-current-time-display,
+[data-theme="dark"] audio::-webkit-media-controls-time-remaining-display {
+    @apply text-gray-300;
+}
+
+/* Form Elements */
+[data-theme="dark"] input[type="number"] {
+    @apply bg-gray-700 border-gray-600 text-gray-100;
+}
+
+[data-theme="dark"] input[type="number"]:focus {
+    @apply border-emerald-500 ring-emerald-500;
+}
+
+/* Navigation and Footer */
+[data-theme="dark"] .header,
+[data-theme="dark"] .footer {
+    @apply bg-emerald-700 border-t border-emerald-600;
+}
+
+/* Transitions */
+[data-theme="dark"] * {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}

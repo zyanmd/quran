@@ -1,0 +1,323 @@
+:root {
+    --primary-color: #2A9D8F;
+    --secondary-color: #264653;
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #f8f9fa;
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: var(--transition);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    animation: slideDown 0.5s ease;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.logo span {
+    font-weight: 300;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    animation: fadeIn 1s ease;
+}
+
+.search-container {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+input[type="number"] {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+}
+
+.primary-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.primary-btn:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.surah-info {
+    margin: 1.5rem 0;
+    padding: 2rem;
+    background-color: rgba(42, 157, 143, 0.08);
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    animation: fadeIn 0.5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.surah-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background-color: var(--primary-color);
+}
+
+.surah-info h2 {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid rgba(42, 157, 143, 0.3);
+    display: inline-block;
+}
+
+.surah-info p {
+    font-size: 1.1rem;
+    margin: 0.8rem 0;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.surah-info p::before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.error {
+    color: #e63946;
+    background-color: rgba(230, 57, 70, 0.1);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e63946;
+}
+
+.audio-player {
+    width: 100%;
+    margin-top: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: var(--transition);
+}
+
+/* Styling controls */
+audio::-webkit-media-controls-panel {
+    background-color: var(--card-bg) !important;
+    border-radius: 8px;
+}
+
+audio::-webkit-media-controls-play-button {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 10px;
+    transition: var(--transition);
+}
+
+audio::-webkit-media-controls-play-button:hover {
+    transform: scale(1.1);
+    background-color: var(--secondary-color);
+}
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+audio::-webkit-media-controls-timeline {
+    background-color: rgba(42, 157, 143, 0.2);
+    border-radius: 4px;
+    margin: 0 10px;
+}
+
+audio::-webkit-media-controls-timeline-progress-bar {
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+audio::-webkit-media-controls-volume-slider {
+    background-color: rgba(42, 157, 143, 0.2);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+audio::-webkit-media-controls-volume-slider::-webkit-slider-thumb {
+    background-color: var(--primary-color);
+}
+
+.footer {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+    margin-top: auto;
+}
+
+.footer p {
+    text-align: center;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .search-container {
+        flex-direction: column;
+    }
+    
+    input[type="number"] {
+        width: 100%;
+    }
+    
+    .primary-btn {
+        justify-content: center;
+    }
+}
+/* Mobile First Approach */
+@media (max-width: 768px) {
+    .surah-info {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .surah-info h2 {
+        font-size: 1.2rem;
+    }
+    
+    .audio-player {
+        margin-top: 1rem;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 769px) {
+    .navbar {
+        padding: 1rem 0;
+    }
+    
+    .card {
+        margin-top: 2rem;
+    }
+    
+    .search-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .surah-info {
+        padding: 2rem;
+        font-size: 1rem;
+    }
+    
+    .surah-info h2 {
+        font-size: 1.5rem;
+    }
+}
+
+/* General Responsive Tweaks */
+.audio-player::-webkit-media-controls-panel {
+    padding: 8px;
+}
+
+@media (max-width: 480px) {
+    .logo i {
+        font-size: 1rem;
+    }
+    
+    .btn-circle {
+        width: 2rem;
+        height: 2rem;
+    }
+}
